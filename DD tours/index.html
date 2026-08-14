@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5JBH14DS0W"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-5JBH14DS0W");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DD Tours</title>
+    <meta
+      name="description"
+      content="DD Tours is a leading travel agency that specializes in providing exceptional travel experiences to our customers. With a wide range of destinations and personalized services, we strive to make every trip unforgettable. Our team of experienced travel experts is dedicated to helping you plan the perfect vacation, whether it's a romantic getaway, a family adventure, or a solo exploration. Join us at DD Tours and let us take you on a journey of a lifetime!"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5JBH14DS0W"
+    ></script>
+
+    <style>
+      .logo {
+        display: inline-block;
+        padding: 6px;
+        margin-left: 20px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      }
+      .logo img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        display: block;
+      }
+      nav {
+        display: flex;
+        gap: 10px;
+        margin-left: auto;
+      }
+      nav a {
+        gap: 10px;
+        color: rgb(73, 197, 222);
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+        padding: 5px;
+        margin-right: 20px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      nav a:hover {
+        color: rgb(3, 66, 65);
+        cursor: pointer;
+      }
+      .hero {
+        height: 100vh;
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 120px 0 0 3vw;
+        margin-left: 0;
+        color: white;
+        background-image:
+          linear-gradient(to right, rgba(0, 0, 0, 0.55), transparent),
+          url("images/sigiriya.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      @media (max-width: 768px) {
+        .hero {
+          margin-left: 0;
+        }
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        width: min(520px, 88vw);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0;
+        padding: 24px 28px;
+        background: rgba(0, 0, 0, 0.26);
+        border-radius: 24px;
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      }
+      .hero-content h1 {
+        color: rgb(255, 255, 255);
+        font-size: clamp(2.8rem, 4vw, 3.4rem);
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        margin: 0 0 0.35em 0;
+        padding: 0;
+        text-align: left;
+        letter-spacing: 0.02em;
+        line-height: 1.05;
+      }
+      .hero-content h2 {
+        color: rgb(235, 245, 247);
+        font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        margin: 0 0 1.25em 0;
+        padding: 0;
+        text-align: left;
+        line-height: 1.35;
+        max-width: 100%;
+      }
+      .hero-content p {
+        color: rgb(232, 240, 244);
+        font-size: 1rem;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        margin: 0 0 1.75em 0;
+        padding: 0;
+        text-align: left;
+        max-width: 100%;
+        line-height: 1.8;
+      }
+      .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .hero-content .btn-pckg,
+      .hero-content .btn-cont {
+        margin: 0;
+      }
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: rgb(255, 255, 255);
+        color: rgb(1, 30, 33);
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 5vw;
+        background: transparent;
+        z-index: 10;
+      }
+      main > section:not(.hero) {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 5vw;
+        margin-left: 30px;
+      }
+      .hamburger {
+        font-size: 30px;
+        cursor: pointer;
+        color: rgb(55, 210, 240);
+        display: block;
+        user-select: none;
+      }
+      @media (max-width: 768px) {
+        nav {
+          position: absolute;
+          top: 70px;
+          right: 20px;
+          flex-direction: column;
+          background: rgba(0, 0, 0, 0.9);
+          padding: 20px;
+          border-radius: 8px;
+          gap: 0;
+          display: none;
+        }
+        nav.active {
+          display: flex;
+        }
+        nav a {
+          margin: 10px 0;
+          padding: 10px;
+        }
+        .hamburger {
+          display: block;
+        }
+        header {
+          padding: 20px 20px;
+        }
+      }
+      footer {
+        background-color: rgb(1, 30, 33);
+        width: 100%;
+        color: rgb(15, 219, 188);
+        text-align: center;
+        padding: 16px 0;
+        margin-top: 20px;
+        margin-right: auto;
+        box-sizing: border-box;
+      }
+      footer p {
+        font-size: 14px;
+      }
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 15px;
+      }
+      .social-links img {
+        width: 32px;
+        height: 32px;
+        transition: transform 0.3s ease;
+        background-color: none;
+        border: none;
+      }
+      .social-links img:hover {
+        transform: scale(1.15);
+      }
+      .hero-content .btn-pckg,
+      .hero-content .btn-cont {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 24px;
+        background-color: rgb(235, 245, 247);
+        color: rgb(1, 30, 33);
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 10px;
+        border: none;
+        min-width: 160px;
+      }
+      .hero-content .btn-pckg:hover,
+      .hero-content .btn-cont:hover {
+        background-color: rgb(5, 149, 165);
+        color: white;
+      }
+      .trust {
+        max-width: 1200px;
+        margin: 0 auto 60px;
+        padding: 40px 5vw 60px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(240px, 1fr));
+        gap: 24px;
+        align-items: stretch;
+        background: none;
+        border-radius: 36px;
+        border: none;
+        box-shadow: none;
+        text-align: center;
+      }
+      @media (max-width: 768px) {
+        .trust {
+          grid-template-columns: 1fr;
+        }
+      }
+      .trust h2 {
+        grid-column: 1 / -1;
+        margin: 0 0 8px;
+        padding: 20px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: rgb(1, 30, 33);
+      }
+      .trust-items {
+        background: rgba(255, 255, 255, 0.98);
+        color: rgb(29, 77, 82);
+        padding: 32px 26px;
+        margin-bottom: 50px;
+        border-radius: 20px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1.3rem;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+      .trust-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: none;
+        color: white;
+        margin-bottom: 18px;
+        font-size: 2rem;
+      }
+      .trust-items:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+        border-color: rgba(5, 149, 165, 0.22);
+      }
+      .trust-items p {
+        margin: 12px 0 0;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: rgb(55, 58, 64);
+        font-weight: 400;
+      }
+      .gallery-preview {
+        padding: 40px 5vw;
+        background: white;
+        margin-top: 5px;
+        flex: 1;
+      }
+      .gallery-preview h2 {
+        text-align: center;
+        color: rgb(1, 30, 33);
+        font-size: 2rem;
+        margin-bottom: 40px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        padding-top: 0;
+        margin-top: 5px;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 250px);
+        grid-template-rows: repeat(2, 250px);
+        gap: 20px;
+        max-width: 700px;
+        margin: 0 0 0 5px;
+        height: 100%;
+        padding-top: 0;
+      }
+      @media (max-width: 768px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+        }
+        .gallery-grid img:nth-child(1),
+        .gallery-grid img:nth-child(2),
+        .gallery-cta {
+          grid-column: auto;
+          grid-row: auto;
+        }
+      }
+      .gallery-grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .gallery-grid img:nth-child(2) {
+        grid-column: 1;
+        grid-row: 1 / 3;
+      }
+      .gallery-grid img:nth-child(1) {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      .gallery-cta {
+        position: relative;
+        display: block;
+        grid-column: 2;
+        grid-row: 2;
+      }
+      .gallery-cta img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        border-radius: 20px;
+        transition: opacity 0.3s ease;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      .gallery-cta:hover .overlay {
+        opacity: 1;
+      }
+      .reviews-section {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        padding: 0;
+        margin-top: 90px;
+      }
+      .reviews-box {
+        max-width: 400px;
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        text-align: center;
+      }
+      .stars {
+        font-size: 1.5rem;
+        color: #34e0a1;
+      }
+      .tripadvisor-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        background-color: #34e0a1;
+        color: black;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+      }
+      .tripadvisor-btn:hover {
+        transform: translateY(-6px);
+      }
+      .showcase {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 60px 5vw;
+        flex-wrap: wrap;
+      }
+      .lead-video-section {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 760px;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        width: 100%;
+        max-width: none;
+      }
+      .lead-video-inner {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px;
+        width: min(1200px, 100%);
+        padding: 80px 5vw;
+      }
+      @media (max-width: 768px) {
+        .lead-video-inner {
+          padding: 40px 20px;
+          flex-direction: column;
+        }
+        .lead-side {
+          display: none;
+        }
+        .lead-form {
+          width: 100%;
+          max-width: none;
+          padding: 15px 20px;
+        }
+      }
+      main > section.lead-video-section {
+        max-width: none;
+        margin: 60px 0 0 0;
+        padding: 0;
+        width: 100%;
+      }
+      .lead-video-section video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+      .lead-video-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.22);
+        z-index: 2;
+      }
+      .lead-side {
+        flex: 1;
+        min-width: 320px;
+        min-height: 460px;
+      }
+      .lead-form {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        max-width: 520px;
+        width: min(520px, 100%);
+        margin: 0;
+        padding: 20px 30px;
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(18px);
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+      }
+      .lead-form h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: rgb(0, 13, 14);
+        text-align: left;
+        margin: 0 0 12px 0;
+        padding: 20px;
+        font-family: "Montserrat", sans-serif;
+      }
+      .lead-form > p {
+        text-align: left;
+        color: rgb(184, 189, 199);
+        font-size: 1rem;
+        margin: 0 0 20px 0;
+        font-family: "Montserrat", sans-serif;
+      }
+      .lead-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 20px;
+      }
+      .field-group label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: 600;
+        color: rgb(1, 30, 33);
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+        font-family: "Montserrat", sans-serif;
+      }
+      .field-group label .required {
+        color: rgb(220, 53, 69);
+      }
+      .lead-form input,
+      .lead-form select,
+      .lead-form textarea {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid rgba(5, 149, 165, 0.3);
+        border-radius: 12px;
+        font-size: 1rem;
+        font-family: "Montserrat", sans-serif;
+        background-color: rgba(255, 255, 255, 0.95);
+        color: rgb(1, 30, 33);
+        box-sizing: border-box;
+        transition:
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .lead-form input:focus,
+      .lead-form select:focus,
+      .lead-form textarea:focus {
+        outline: none;
+        border-color: rgb(5, 149, 165);
+        box-shadow: 0 0 0 3px rgba(5, 149, 165, 0.1);
+      }
+      .lead-form input::placeholder,
+      .lead-form textarea::placeholder {
+        color: rgb(150, 155, 160);
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .message-box textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+      .lead-form button {
+        padding: 14px 32px;
+        background: linear-gradient(
+          135deg,
+          rgb(5, 149, 165) 0%,
+          rgb(55, 210, 240) 100%
+        );
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+        margin-top: 8px;
+        font-family: "Montserrat", sans-serif;
+      }
+      .lead-form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(5, 149, 165, 0.3);
+      }
+      @media (max-width: 900px) {
+        .lead-video-section {
+          padding: 40px 5vw;
+        }
+      }
+      @media (max-width: 600px) {
+        .lead-form {
+          margin: 40px 0;
+          padding: 30px 20px;
+        }
+        .lead-form h2 {
+          font-size: 1.6rem;
+        }
+      }
+      .video-box {
+        flex: 1 1 420px;
+        min-width: 320px;
+        max-width: 520px;
+        min-height: 66%;
+        height: auto;
+        align-self: center;
+        background-color: #000;
+        border-radius: 24px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .video-box img,
+      .video-box video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      #name-error,
+      #email-error,
+      #phone-error,
+      #date-error,
+      #travel-interest-error {
+        color: rgb(239, 40, 60);
+        font-size: 0.9rem;
+        margin-top: 4px;
+        font-weight: bold;
+      }
+      #success-message {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo exld text.png" alt="DD Tours Logo" />
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="packages.html">Tours</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+      <div class="hamburger">☰</div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Welcome to DD Tours</h1>
+          <h2>Explore the Beauty of Sri Lanka with Us</h2>
+          <p>
+            Discover the world with DD tours! We offer the best travel packages
+            to amazing destinations. Whether you're looking for a relaxing beach
+            vacation, an adventurous mountain trek, or a cultural city tour, we
+            have something for everyone. Book your next trip with DD Tours and
+            create unforgettable memories!
+          </p>
+          <div class="hero-buttons">
+            <a href="packages.html" class="btn-pckg">Explore Tours</a>
+            <a
+              href="https://wa.me/94775950277?text=Hi%20DD%20Tours,%20I%20would%20like%20to%20plan%20a%20customized%20trip%20to%20Sri%20Lanka."
+              class="btn-cont"
+              >Chat on WhatsApp</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="trust">
+        <h2>Why travel with DD Tours?</h2>
+        <div class="trust-items">
+          <span class="trust-icon">🛂</span>
+          <strong>Experienced Local Driver Network</strong>
+          <p>
+            Fully certified and professionally managed travel services for safe,
+            reliable trips.
+          </p>
+        </div>
+        <div class="trust-items">
+          <span class="trust-icon">🗺️</span>
+          <strong>Personalized Itineraries</strong>
+          <p>
+            Custom travel plans designed for your pace, budget and interests.
+          </p>
+        </div>
+        <div class="trust-items">
+          <span class="trust-icon">💬</span>
+          <strong>24/7 Customer Support</strong>
+          <p>
+            Live assistance before, during, and after your trip so you always
+            feel supported.
+          </p>
+        </div>
+        <div class="trust-items">
+          <span class="trust-icon">🌟</span>
+          <strong>5-Star Customer Service</strong>
+          <p>
+            Friendly expert guidance and fast responses make every booking
+            smooth.
+          </p>
+        </div>
+      </section>
+      <section class="showcase">
+        <section class="gallery-preview">
+          <h2>Traveller Moments</h2>
+          <div class="gallery-grid">
+            <img src="images/safari.jpg" alt="Safari Tour" />
+            <img src="images/train.jpeg" alt="Train Journey" />
+            <a href="gallery.html" class="gallery-cta">
+              <img src="images/tea.jpg" alt="Hill Country Experience" />
+
+              <div class="overlay">Explore More →</div>
+            </a>
+          </div>
+        </section>
+        <section class="reviews-section">
+          <div class="reviews-box">
+            <h3>Trusted by Travellers Worldwide</h3>
+            <p class="stars">★★★★★</p>
+            <blockquote>
+              "We were lucky enough to travel to Sri Lanka with the DD.
+              Extraordinary, a super helpful person, genuine and always smiling.
+              From day one, he was extremely professional, punctual and
+              attentive to our every need. Always ready to resolve any
+              unexpected with calm and efficiency, made us feel safe and
+              completely comfortable throughout the trip. Thanks to him we had
+              not only a driver, but a real reference point, able to recommend
+              places, adapt the itinerary and make the experience even more
+              special. We would definitely recommend it to anyone who wants to
+              discover Sri Lanka in an authentic, serene and well organized way.
+              A huge added value to our trip!"
+            </blockquote>
+            <p>
+              <strong><em>- Ginevra S. , Italy -</em></strong>
+            </p>
+            <a
+              href="https://www.tripadvisor.com/Attraction_Review-g2550421-d32701657-Reviews-Sri_Lanka_private_Driver_DD-Katunayaka_Western_Province.html"
+              target="_blank"
+              class="tripadvisor-btn"
+            >
+              View More Reviews
+            </a>
+          </div>
+        </section>
+      </section>
+      <section class="lead-video-section" id="lead-form">
+        <video autoplay muted loop playsinline>
+          <source src="images/lead-vodeo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="lead-video-inner">
+          <div class="lead-form" id="lead-form-content">
+            <h2>Plan Your Dream Trip</h2>
+            <p>
+              Tell us your travel details and we'll create the perfect itinerary
+              for you
+            </p>
+            <form id="trip-form">
+              <div class="field-group">
+                <label>Name <span class="required">*</span></label>
+                <input
+                  type="text"
+                  id="full-name"
+                  placeholder="Enter your full name"
+                  required
+                />
+                <p id="name-error"></p>
+              </div>
+              <div class="field-group">
+                <label>Email Address <span class="required">*</span></label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  required
+                />
+                <p id="email-error"></p>
+              </div>
+              <div class="field-group">
+                <label>Phone Number <span class="required">*</span></label>
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="Enter your phone number"
+                  required
+                />
+                <p id="phone-error"></p>
+              </div>
+              <div class="field-group">
+                <label>Travel Dates <span class="required">*</span></label>
+                <input
+                  type="text"
+                  id="travel-dates"
+                  placeholder="Enter your travel dates"
+                  required
+                />
+                <p id="date-error"></p>
+              </div>
+              <div class="field-group">
+                <label>Travel Interest <span class="required">*</span></label>
+                <select id="travel-interest" required>
+                  <option value="">Select your travel interest</option>
+                  <option value="beach">Beach & Relaxation</option>
+                  <option value="adventure">Adventure & Hiking</option>
+                  <option value="cultural">Cultural Experience</option>
+                  <option value="wildlife">Wildlife Safari</option>
+                  <option value="city">City Tours</option>
+                  <option value="other">Other</option>
+                </select>
+                <p id="travel-interest-error"></p>
+              </div>
+              <div class="field-group message-box">
+                <label>Your Message</label>
+                <textarea
+                  id="message"
+                  placeholder="Tell us more about your travel preferences, budget, or any special requests..."
+                ></textarea>
+              </div>
+              <button type="submit" id="submit-btn">
+                Get Free Trip Consultation
+              </button>
+            </form>
+          </div>
+          <div class="lead-side"></div>
+          <p id="success-message"></p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 DD Tours. All rights reserved.</p>
+      <div class="social-links">
+        <a
+          href="https://web.facebook.com/DDTOURS831/photos/?_rdc=1&_rdr#"
+          target="_blank"
+        >
+          <img src="images/facebook.png" alt="Facebook"
+        /></a>
+        <a
+          href="https://www.instagram.com/travel_with_dd_lanka/"
+          target="_blank"
+        >
+          <img src="images/insta.png" alt="Instagram"
+        /></a>
+        <a href="https://wa.me/94775950277" target="_blank">
+          <img src="images/whatsapp.png" alt="Whatsapp Us"
+        /></a>
+      </div>
+    </footer>
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector("nav");
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+      const navLinks = document.querySelectorAll("nav a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+        });
+      });
+
+      document
+        .getElementById("submit-btn")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+
+          const nameError = document.getElementById("name-error");
+          const emailError = document.getElementById("email-error");
+          const phoneError = document.getElementById("phone-error");
+          const dateError = document.getElementById("date-error");
+          const travelInterestError = document.getElementById(
+            "travel-interest-error",
+          );
+          const successMessage = document.getElementById("success-message");
+          const tripForm = document.getElementById("trip-form");
+          const leadFormContent = document.getElementById("lead-form-content");
+
+          let name = document.getElementById("full-name").value;
+          name = name.trim(); // Remove leading and trailing whitespace
+          if (name.length < 2) {
+            nameError.textContent =
+              "Please enter a valid name with at least 2 characters.";
+          }
+          let email = document.getElementById("email").value;
+          email = email.trim().toLowerCase(); // Remove leading and trailing whitespace and convert to lowercase
+          let phone = document.getElementById("phone").value;
+          phone = phone.trim(); // Remove leading and trailing whitespace
+          let travelDates = document.getElementById("travel-dates").value;
+          travelDates = travelDates.trim(); // Remove leading and trailing whitespace
+          let travelInterest = document.getElementById("travel-interest").value;
+          let message = document.getElementById("message").value;
+          message = message.trim(); // Remove leading and trailing whitespace
+
+          console.log("full-name:", name);
+          console.log("email:", email);
+          console.log("phone:", phone);
+          console.log("travel-dates:", travelDates);
+          console.log("travel-interest:", travelInterest);
+          console.log("message:", message);
+
+          nameError.textContent = "";
+          emailError.textContent = "";
+          phoneError.textContent = "";
+          dateError.textContent = "";
+          travelInterestError.textContent = "";
+
+          let hasError = false;
+
+          if (name === "") {
+            nameError.textContent = "Please enter your name.";
+            hasError = true;
+          }
+          if (email === "") {
+            emailError.textContent = "Please enter your email.";
+            hasError = true;
+          } else if (!email.includes("@")) {
+            emailError.textContent = "Please enter a valid email address.";
+            hasError = true;
+          }
+          if (phone === "") {
+            phoneError.textContent = "Please enter your phone number.";
+            hasError = true;
+          }
+          if (travelDates === "") {
+            dateError.textContent = "Please enter your travel dates.";
+            hasError = true;
+          }
+          if (travelInterest === "") {
+            travelInterestError.textContent =
+              "Please select your travel interest.";
+            hasError = true;
+          }
+
+          if (hasError === false) {
+            // SUCCESSFUL SUBMISSION
+            successMessage.textContent = `Thank you, ${name}! Your travel enquiry has been submitted successfully. Our team will get back to you shortly.`;
+
+            tripForm.reset(); // Reset the form fields
+            leadFormContent.style.display = "none"; // Hide the form
+          }
+        });
+    </script>
+  </body>
+</html>
