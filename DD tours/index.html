@@ -58,7 +58,7 @@
       }
       nav a {
         gap: 10px;
-        color: rgb(73, 197, 222);
+        color: rgb(244, 251, 251);
         text-decoration: none;
         margin-left: 20px;
         font-weight: bold;
@@ -68,7 +68,7 @@
         padding-bottom: 0;
       }
       nav a:hover {
-        color: rgb(3, 66, 65);
+        color: rgb(3, 59, 58);
         cursor: pointer;
       }
       .hero {
@@ -180,7 +180,7 @@
         font-size: 30px;
         cursor: pointer;
         color: rgb(55, 210, 240);
-        display: block;
+        display: none;
         user-select: none;
       }
       @media (max-width: 768px) {
@@ -471,6 +471,8 @@
       }
       @media (max-width: 768px) {
         .lead-video-inner {
+          width: 100%;
+          box-sizing: border-box;
           padding: 40px 20px;
           flex-direction: column;
         }
@@ -479,8 +481,10 @@
         }
         .lead-form {
           width: 100%;
-          max-width: none;
-          padding: 15px 20px;
+          max-width: 520px;
+          box-sizing: border-box;
+          padding: 30px 20px;
+          margin: 0 auto;
         }
       }
       main > section.lead-video-section {
@@ -514,8 +518,9 @@
         z-index: 3;
         display: flex;
         flex-direction: column;
-        max-width: 520px;
-        width: min(520px, 100%);
+        box-sizing: border-box;
+        max-width: 600px;
+        width: min(600px, 100%);
         margin: 0;
         padding: 20px 30px;
         background: rgba(255, 255, 255, 0.04);
@@ -624,10 +629,6 @@
         }
       }
       @media (max-width: 600px) {
-        .lead-form {
-          margin: 40px 0;
-          padding: 30px 20px;
-        }
         .lead-form h2 {
           font-size: 1.6rem;
         }
@@ -664,6 +665,10 @@
         font-weight: bold;
       }
       #success-message {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
         font-size: 20px;
         font-weight: 600;
         text-align: center;
@@ -901,6 +906,18 @@
         });
       });
 
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }, 100);
+        }
+      }
+
       document
         .getElementById("submit-btn")
         .addEventListener("click", function (event) {
@@ -975,12 +992,23 @@
 
           if (hasError === false) {
             // SUCCESSFUL SUBMISSION
-            successMessage.textContent = `Thank you, ${name}! Your travel enquiry has been submitted successfully. Our team will get back to you shortly.`;
+            successMessage.innerHTML = `Thank you, ${name}!<br> Your travel enquiry has been submitted successfully.<br>Our team will get back to you shortly.`;
 
             tripForm.reset(); // Reset the form fields
             leadFormContent.style.display = "none"; // Hide the form
           }
         });
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }, 100);
+        }
+      }
     </script>
   </body>
 </html>
