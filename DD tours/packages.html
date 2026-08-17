@@ -102,7 +102,7 @@
         cursor: pointer;
       }
       .hamburger {
-        display: block;
+        display: none;
         font-size: 28px;
         color: rgb(2, 45, 53);
         cursor: pointer;
@@ -331,6 +331,7 @@
         margin-top: 20px;
         box-sizing: border-box;
       }
+
       /* force child elements to inherit */
       footer p {
         color: rgb(15, 219, 188);
@@ -503,6 +504,18 @@
           nav.classList.remove("active");
         });
       });
+
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }, 100);
+        }
+      }
     </script>
   </body>
 </html>
