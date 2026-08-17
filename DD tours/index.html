@@ -12,7 +12,6 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-5JBH14DS0W");
     </script>
     <meta charset="UTF-8" />
@@ -802,12 +801,17 @@
               Tell us your travel details and we'll create the perfect itinerary
               for you
             </p>
-            <form id="trip-form">
+            <form
+              id="trip-form"
+              action="https://formspree.io/f/xkjwqkzz"
+              method="post"
+            >
               <div class="field-group">
                 <label>Name <span class="required">*</span></label>
                 <input
                   type="text"
                   id="full-name"
+                  name="name"
                   placeholder="Enter your full name"
                   required
                 />
@@ -818,6 +822,7 @@
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   placeholder="Enter your email"
                   required
                 />
@@ -828,6 +833,7 @@
                 <input
                   type="tel"
                   id="phone"
+                  name="phone"
                   placeholder="Enter your phone number"
                   required
                 />
@@ -838,6 +844,7 @@
                 <input
                   type="text"
                   id="travel-dates"
+                  name="travel_dates"
                   placeholder="Enter your travel dates"
                   required
                 />
@@ -845,7 +852,7 @@
               </div>
               <div class="field-group">
                 <label>Travel Interest <span class="required">*</span></label>
-                <select id="travel-interest" required>
+                <select id="travel-interest" name="travel_interest" required>
                   <option value="">Select your travel interest</option>
                   <option value="beach">Beach & Relaxation</option>
                   <option value="adventure">Adventure & Hiking</option>
@@ -860,6 +867,7 @@
                 <label>Your Message</label>
                 <textarea
                   id="message"
+                  name="message"
                   placeholder="Tell us more about your travel preferences, budget, or any special requests..."
                 ></textarea>
               </div>
@@ -874,7 +882,7 @@
       </section>
     </main>
     <footer>
-      <p>&copy; 2024 DD Tours. All rights reserved.</p>
+      <p>&copy; 2026 DD Tours. All rights reserved.</p>
       <div class="social-links">
         <a
           href="https://web.facebook.com/DDTOURS831/photos/?_rdc=1&_rdr#"
@@ -894,33 +902,9 @@
       </div>
     </footer>
     <script>
-      const hamburger = document.querySelector(".hamburger");
-      const nav = document.querySelector("nav");
-      hamburger.addEventListener("click", () => {
-        nav.classList.toggle("active");
-      });
-      const navLinks = document.querySelectorAll("nav a");
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          nav.classList.remove("active");
-        });
-      });
-
-      if (window.location.hash) {
-        const target = document.querySelector(window.location.hash);
-
-        if (target) {
-          setTimeout(() => {
-            target.scrollIntoView({
-              behavior: "smooth",
-            });
-          }, 100);
-        }
-      }
-
       document
-        .getElementById("submit-btn")
-        .addEventListener("click", function (event) {
+        .getElementById("trip-form")
+        .addEventListener("submit", function (event) {
           event.preventDefault();
 
           const nameError = document.getElementById("name-error");
@@ -930,32 +914,22 @@
           const travelInterestError = document.getElementById(
             "travel-interest-error",
           );
+
           const successMessage = document.getElementById("success-message");
           const tripForm = document.getElementById("trip-form");
           const leadFormContent = document.getElementById("lead-form-content");
 
-          let name = document.getElementById("full-name").value;
-          name = name.trim(); // Remove leading and trailing whitespace
-          if (name.length < 2) {
-            nameError.textContent =
-              "Please enter a valid name with at least 2 characters.";
-          }
-          let email = document.getElementById("email").value;
-          email = email.trim().toLowerCase(); // Remove leading and trailing whitespace and convert to lowercase
-          let phone = document.getElementById("phone").value;
-          phone = phone.trim(); // Remove leading and trailing whitespace
-          let travelDates = document.getElementById("travel-dates").value;
-          travelDates = travelDates.trim(); // Remove leading and trailing whitespace
+          let name = document.getElementById("full-name").value.trim();
+          let email = document
+            .getElementById("email")
+            .value.trim()
+            .toLowerCase();
+          let phone = document.getElementById("phone").value.trim();
+          let travelDates = document
+            .getElementById("travel-dates")
+            .value.trim();
           let travelInterest = document.getElementById("travel-interest").value;
-          let message = document.getElementById("message").value;
-          message = message.trim(); // Remove leading and trailing whitespace
-
-          console.log("full-name:", name);
-          console.log("email:", email);
-          console.log("phone:", phone);
-          console.log("travel-dates:", travelDates);
-          console.log("travel-interest:", travelInterest);
-          console.log("message:", message);
+          let message = document.getElementById("message").value.trim();
 
           nameError.textContent = "";
           emailError.textContent = "";
@@ -968,7 +942,12 @@
           if (name === "") {
             nameError.textContent = "Please enter your name.";
             hasError = true;
+          } else if (name.length < 2) {
+            nameError.textContent =
+              "Please enter a valid name with at least 2 characters.";
+            hasError = true;
           }
+
           if (email === "") {
             emailError.textContent = "Please enter your email.";
             hasError = true;
@@ -976,14 +955,17 @@
             emailError.textContent = "Please enter a valid email address.";
             hasError = true;
           }
+
           if (phone === "") {
             phoneError.textContent = "Please enter your phone number.";
             hasError = true;
           }
+
           if (travelDates === "") {
             dateError.textContent = "Please enter your travel dates.";
             hasError = true;
           }
+
           if (travelInterest === "") {
             travelInterestError.textContent =
               "Please select your travel interest.";
@@ -991,24 +973,34 @@
           }
 
           if (hasError === false) {
-            // SUCCESSFUL SUBMISSION
-            successMessage.innerHTML = `Thank you, ${name}!<br> Your travel enquiry has been submitted successfully.<br>Our team will get back to you shortly.`;
+            const formData = new FormData(tripForm);
 
-            tripForm.reset(); // Reset the form fields
-            leadFormContent.style.display = "none"; // Hide the form
+            fetch(tripForm.action, {
+              method: "POST",
+              body: formData,
+              headers: {
+                Accept: "application/json",
+              },
+            })
+              .then((response) => {
+                if (response.ok) {
+                  successMessage.innerHTML = `Thank you, ${name}!<br>
+              Your travel enquiry has been submitted successfully.<br>
+              Our team will get back to you shortly.`;
+
+                  tripForm.reset();
+                  leadFormContent.style.display = "none";
+                } else {
+                  successMessage.textContent =
+                    "Sorry, something went wrong. Please try again.";
+                }
+              })
+              .catch(() => {
+                successMessage.textContent =
+                  "Sorry, something went wrong. Please try again.";
+              });
           }
         });
-      if (window.location.hash) {
-        const target = document.querySelector(window.location.hash);
-
-        if (target) {
-          setTimeout(() => {
-            target.scrollIntoView({
-              behavior: "smooth",
-            });
-          }, 100);
-        }
-      }
     </script>
   </body>
 </html>
