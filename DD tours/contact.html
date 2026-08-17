@@ -20,6 +20,8 @@
         margin: 0;
         background-color: #f9f9f9;
         overflow-x: hidden;
+
+         transition: 0.4s ease;
       }
       * {
         box-sizing: border-box;
@@ -91,7 +93,7 @@
         cursor: pointer;
       }
       .hamburger {
-        display: block;
+        display: none;
         font-size: 28px;
         color: rgb(2, 45, 53);
         cursor: pointer;
@@ -131,11 +133,19 @@
         height: 70vh;
         width: 100%;
         position: relative;
-        object-fit: cover;
         display: block;
         margin-left: 0;
         overflow: hidden;
         background-image: url(images/contact-hero.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      @media (max-width: 768px) {
+      .hero {
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
       }
       .btn-primary, .btn-secondary {
         display: inline-block;
@@ -302,6 +312,17 @@ navLinks.forEach((link) => {
     nav.classList.remove("active");
   });
 });
+if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }, 100);
+        }
+      }
 </script>
   </body>
 </html>
