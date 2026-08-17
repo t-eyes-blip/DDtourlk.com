@@ -902,6 +902,20 @@
       </div>
     </footer>
     <script>
+      const hamburger = document.querySelector(".hamburger");
+      const nav = document.querySelector("nav");
+
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+
+      const navLinks = document.querySelectorAll("nav a");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("active");
+        });
+      });
       document
         .getElementById("trip-form")
         .addEventListener("submit", function (event) {
