@@ -904,13 +904,10 @@
     <script>
       const hamburger = document.querySelector(".hamburger");
       const nav = document.querySelector("nav");
-
       hamburger.addEventListener("click", () => {
         nav.classList.toggle("active");
       });
-
       const navLinks = document.querySelectorAll("nav a");
-
       navLinks.forEach((link) => {
         link.addEventListener("click", () => {
           nav.classList.remove("active");
@@ -998,6 +995,10 @@
             })
               .then((response) => {
                 if (response.ok) {
+                  window.dataLayer = window.dataLayer || [];
+                  window.dataLayer.push({
+                    event: "form_submit",
+                  });
                   successMessage.innerHTML = `Thank you, ${name}!<br>
               Your travel enquiry has been submitted successfully.<br>
               Our team will get back to you shortly.`;
