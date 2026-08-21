@@ -1024,6 +1024,9 @@
                   window.dataLayer = window.dataLayer || [];
                   window.dataLayer.push({
                     event: "form_submit",
+                    travel_interest:
+                      document.getElementById("travel-interest").value,
+                    travel_dates: document.getElementById("travel-dates").value,
                   });
                   successMessage.innerHTML = `Thank you, ${name}!<br>
               Your travel enquiry has been submitted successfully.<br>
